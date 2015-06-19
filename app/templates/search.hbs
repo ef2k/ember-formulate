@@ -1,0 +1,47 @@
+<div class="container">
+	<div class="row">
+
+		{{#validated-form
+			class="col-md-6 col-md-offset-3"
+			classes="form"
+			action="searchPerson"}}
+
+			<h2 class="text-center">Start Searching!</h2>
+
+			{{#validated-area action="result" register="register" as |r|}}
+				<div class="form-group {{r.resultClass}}">
+					{{validated-input
+						for="first-name"
+						placeholder="First Name"
+						successClass="has-success"
+						errorClass="has-error"
+						classes="form-control"
+
+						action="result"
+						register="register"}}
+				</div>
+			{{/validated-area}}
+
+			{{#validated-area action="result" register="register" as |r|}}
+				<div class="form-group {{r.resultClass}}">
+					{{validated-input
+						for="last-name"
+						placeholder="Last Name"
+						successClass="has-success"
+						errorClass="has-error"
+						classes="form-control"
+
+						action="result"
+						register="register"}}
+				</div>
+			{{/validated-area}}
+
+			<div class="form-group">
+				<input class="form-control" type="text" name='optional-field' placeholder="This is optional">
+			</div>
+
+			<button class="btn btn-primary form-control" type="submit">Search</button>
+		{{/validated-form}}
+
+	</div> <!--row-->
+</div><!--container-->
